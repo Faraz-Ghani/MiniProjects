@@ -1,0 +1,14 @@
+Library
+logs
+obj
+Packages
+ProjectSettings
+Temp
+*.csproj
+Endless.sln
+UpgradeLog.htm
+Plugins
+UserSettings
+.vsconfig
+.vs
+*.meta
