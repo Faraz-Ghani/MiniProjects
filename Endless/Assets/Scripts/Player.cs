@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    private Animator anim;
+
     public float jumpforce;
     float score;
     bool isAlive = true;
@@ -18,6 +20,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        anim = GetComponent<Animator>();   
         rb = GetComponent<Rigidbody2D>();
         score = 0;
     }
@@ -26,6 +29,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            anim.SetBool("IsRunning", isAlive);
             if (isGrounded == true)
             {
                 isGrounded = false; 
@@ -50,6 +54,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Spike"))
         {
             isAlive = false;
+            anim.SetBool("Death", true);
             Time.timeScale = 0;
         }
     }
