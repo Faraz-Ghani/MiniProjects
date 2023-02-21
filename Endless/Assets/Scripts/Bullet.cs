@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public SpikeGenerator SpikeGenerator;
     private Animator anim;
     private float speed = 20;
     public Rigidbody2D rb;
@@ -15,6 +16,7 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.gameObject.CompareTag("nextline"))
         {
             Destroy(gameObject);
@@ -22,6 +24,7 @@ public class Bullet : MonoBehaviour
 
 
         anim.SetBool("Hit", true);
+        SpikeGenerator.randomizer();
     }
 
 }
