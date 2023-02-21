@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpikeScript : MonoBehaviour
 {
     public SpikeGenerator SpikeGenerator;
-
+    public GameObject SpikeDeath;
     // Update is called once per frame
     void Update()
     {
@@ -23,7 +23,8 @@ public class SpikeScript : MonoBehaviour
             Destroy(this.gameObject);
         }
         if (collision.gameObject.CompareTag("Bullet")){
-
+            GameObject DeadSpike = Instantiate(SpikeDeath, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 

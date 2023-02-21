@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpikeGenerator: {fileID: 0}
+  SpikeDeath: {fileID: 7670166737163245173, guid: 4e83c06cc571fc5458312462df11f2a0, type: 3}
 --- !u!212 &9190347171034845221
 SpriteRenderer:
   m_ObjectHideFlags: 0

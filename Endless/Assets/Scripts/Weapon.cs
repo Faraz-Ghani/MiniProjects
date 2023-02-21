@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
-{
+{   
     public Transform firePoint;
     public GameObject bulletPrefab;
     // Update is called once per frame
