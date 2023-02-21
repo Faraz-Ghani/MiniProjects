@@ -9,7 +9,7 @@ public class SpikeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * SpikeGenerator.currentspeed * Time.deltaTime); 
+        transform.Translate(Vector2.left * SpikeGenerator.currentspeed * Time.deltaTime);   
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,6 +21,9 @@ public class SpikeScript : MonoBehaviour
         if (collision.gameObject.CompareTag("finishline"))
         {
             Destroy(this.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Bullet")){
+
         }
     }
 
