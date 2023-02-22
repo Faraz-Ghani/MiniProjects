@@ -23,8 +23,11 @@ public class SpikeScript : MonoBehaviour
             Destroy(this.gameObject);
         }
         if (collision.gameObject.CompareTag("Bullet")){
-            GameObject DeadSpike = Instantiate(SpikeDeath, transform.position, transform.rotation);
-            Destroy(gameObject);
+            {
+                GameObject DeadSpike = Instantiate(SpikeDeath, transform.position, transform.rotation);
+                Destroy(gameObject);
+
+           }
         }
     }
 

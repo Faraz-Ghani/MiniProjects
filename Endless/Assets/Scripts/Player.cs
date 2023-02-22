@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     bool isGrounded = false;
+    public Weapon weapon;
 
     Rigidbody2D rb;
 
@@ -43,6 +44,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("BulletPickup"))
+        {
+            gameObject.GetComponentInChildren<Weapon>().Pickup();
+            Destroy(collision.gameObject);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -57,5 +67,6 @@ public class Player : MonoBehaviour
             anim.SetBool("Death", true);
             Time.timeScale = 0;
         }
+        
     }
 }
