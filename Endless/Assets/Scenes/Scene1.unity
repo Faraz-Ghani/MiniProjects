@@ -1114,8 +1114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPick: {fileID: 8481037423155725789, guid: 13d996fdc1fe4434294c0db2a9538bcb, type: 3}
   min: 5
-  max: 30
-  currentspeed: 20
+  max: 10
+  currentspeed: 5
 --- !u!1 &1285376774
 GameObject:
   m_ObjectHideFlags: 0

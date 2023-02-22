@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class BulletPickUpScript : MonoBehaviour
 {
+    Vector2 _startPosition;
     public BulletGenerator BulletGenerator;
+
+    void Start()
+    {
+        _startPosition = transform.position;
+    }
+
     void Update()
     {
-        transform.Translate(Vector2.left * BulletGenerator.currentspeed * Time.deltaTime);  
+    
+        transform.position += new Vector3(-1 * BulletGenerator.currentspeed, 0.5f * Mathf.Sin(Time.time*2), 0) * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
