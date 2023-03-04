@@ -9,5 +9,6 @@ public class DeathScript : MonoBehaviour
     {
        
         Destroy(gameObject,0.8f);
+
     }
 }

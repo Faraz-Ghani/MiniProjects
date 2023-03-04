@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
+    public GameOverScript gameOverScript;
+
     private Animator anim;
 
     public float jumpforce;
@@ -18,12 +20,18 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
 
     public Text Scoretxt;
-
     private void Awake()
     {
         anim = GetComponent<Animator>();   
         rb = GetComponent<Rigidbody2D>();
         score = 0;
+      Time.timeScale = 1;
+    }
+
+    
+    private void Start()
+    {
+        Scoretxt.gameObject.SetActive(true);
     }
     // Update is called once per frame
     void Update()
@@ -64,9 +72,16 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Spike"))
         {
             isAlive = false;
-            anim.SetBool("Death", true);
-            Time.timeScale = 0;
+            gameOverScript.Setup((int)score);
+            Scoretxt.gameObject.SetActive(false);
+  
+                Time.timeScale = 0;
         }
         
     }
+   public void RestartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
 }
