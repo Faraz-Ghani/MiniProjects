@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public GameOverScript gameOverScript;
-
+    public GameObject StartScreen;
     private Animator anim;
 
     public float jumpforce;
@@ -25,9 +25,14 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();   
         rb = GetComponent<Rigidbody2D>();
         score = 0;
-      Time.timeScale = 1;
+      Time.timeScale = 0;
     }
 
+    public void startgame()
+    {
+        Time.timeScale = 1;
+        StartScreen.gameObject.SetActive(false);
+    }
     
     private void Start()
     {
@@ -81,7 +86,7 @@ public class Player : MonoBehaviour
     }
    public void RestartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
 }
