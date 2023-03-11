@@ -10,7 +10,6 @@ public class BulletGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-       
         generateBullet();
     }   
     public void randomizer()
