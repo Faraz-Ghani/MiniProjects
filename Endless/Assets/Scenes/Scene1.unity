@@ -1089,6 +1089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd87faca4469b364eb9fad4e5457e19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletGenerator: {fileID: 1248880699}
   Player: {fileID: 550631586}
   firePoint: {fileID: 57131217}
   bulletPrefab: {fileID: 8848190536476336985, guid: 1e9269dff9317a3419a1afc9940f896f, type: 3}
@@ -1438,7 +1439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &876029135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1897,8 +1898,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPick: {fileID: 8481037423155725789, guid: 13d996fdc1fe4434294c0db2a9538bcb, type: 3}
-  min: 10
-  max: 30
+  min: 5
+  max: 20
   currentspeed: 5
 --- !u!1 &1285376774
 GameObject:

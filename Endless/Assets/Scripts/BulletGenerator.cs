@@ -15,11 +15,14 @@ public class BulletGenerator : MonoBehaviour
     public void randomizer()
     {
         float randomWait = Random.Range(min, max);
+
+        print(randomWait);
         Invoke("generateBullet", randomWait);
   
     }
     void generateBullet()
     {
+
         GameObject bulletpick = Instantiate(BulletPick, transform.position, transform.rotation);
         bulletpick.GetComponent<BulletPickUpScript>().BulletGenerator = this;
     }

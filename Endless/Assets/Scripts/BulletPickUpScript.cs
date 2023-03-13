@@ -24,12 +24,12 @@ public class BulletPickUpScript : MonoBehaviour
        
     
         if (collision.gameObject.CompareTag("finishline"))
-        { 
+        {
+            BulletGenerator.randomizer();
             Destroy(this.gameObject);
         }
         if (collision.gameObject.CompareTag("nextline"))
         {//fix double spawn on start
-            BulletGenerator.randomizer();
 
         }
     }

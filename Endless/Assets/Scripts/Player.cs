@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public GameOverScript gameOverScript;
-    public GameObject StartScreen;
+    public GameObject StartScreen,button1,button2;
     private Animator anim;
 
     public float jumpforce;
@@ -32,18 +32,20 @@ public class Player : MonoBehaviour
     {
         Time.timeScale = 1;
         StartScreen.gameObject.SetActive(false);
+        button1.gameObject.SetActive(true);
+        button2.gameObject.SetActive(true);
+
+        Scoretxt.gameObject.SetActive(true);
+
     }
     
-    private void Start()
-    {
-        Scoretxt.gameObject.SetActive(true);
-    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) )
         {
             anim.SetBool("IsRunning", isAlive);
+            jump();
             if (isGrounded == true)
             {
                 isGrounded = false; 
@@ -57,6 +59,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void jump()
+    {
+        if (isGrounded == true)
+        {
+            isGrounded = false;
+            rb.AddForce(Vector2.up * jumpforce);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("BulletPickup"))
