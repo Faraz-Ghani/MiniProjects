@@ -136,3 +136,66 @@ Endless/venv/Scripts/pythonw.exe
 *.iss
 *.info
 Space Slimes AI/Build/Windows/x86/Space Slimes_Data/UnityCrashHandler32.exe
+Space Slimes AI/Assets/Sprites/Materials/2205_w026_n002_1983b_p1_1983.mat
+Space Slimes AI/Assets/Sprites/Materials/Background 2.mat
+Space Slimes AI/Assets/Sprites/Materials/Game_Background.mat
+*.config
+*.map
+Endless/Build/Windows/x86/Space Slimes_Data/MonoBleedingEdge/etc/mono/2.0/settings.map
+*.config
+*.txt
+Space Slimes PC/venv/Scripts/activate
+Space Slimes PC/venv/Scripts/activate.bat
+Space Slimes PC/venv/Scripts/Activate.ps1
+Space Slimes PC/venv/Scripts/deactivate.bat
+Space Slimes PC/venv/Scripts/pip.exe
+Space Slimes PC/venv/Scripts/pip3.11.exe
+Space Slimes PC/venv/Scripts/pip3.exe
+Space Slimes PC/venv/Scripts/python.exe
+Space Slimes PC/venv/Scripts/pythonw.exe
+*.tmpl
+Space Slimes PC/venv/Lib/site-packages/setuptools/gui.exe
+Space Slimes PC/venv/Lib/site-packages/setuptools/gui-arm64.exe
+Space Slimes PC/venv/Lib/site-packages/setuptools/gui-64.exe
+Space Slimes PC/venv/Lib/site-packages/setuptools/gui-32.exe
+Space Slimes PC/venv/Lib/site-packages/setuptools/cli.exe
+Space Slimes PC/venv/Lib/site-packages/setuptools/cli-arm64.exe
+Space Slimes PC/venv/Lib/site-packages/setuptools/cli-64.exe
+Space Slimes PC/venv/Lib/site-packages/setuptools/cli-32.exe
+Space Slimes PC/venv/Lib/site-packages/setuptools-65.5.0.dist-info/WHEEL
+Space Slimes PC/venv/Lib/site-packages/setuptools-65.5.0.dist-info/REQUESTED
+Space Slimes PC/venv/Lib/site-packages/setuptools-65.5.0.dist-info/RECORD
+Space Slimes PC/venv/Lib/site-packages/setuptools-65.5.0.dist-info/METADATA
+Space Slimes PC/venv/Lib/site-packages/setuptools-65.5.0.dist-info/LICENSE
+Space Slimes PC/venv/Lib/site-packages/setuptools-65.5.0.dist-info/INSTALLER
+Space Slimes PC/venv/Lib/site-packages/pip/py.typed
+Space Slimes PC/venv/Lib/site-packages/pip/_vendor/distlib/w64.exe
+Space Slimes PC/venv/Lib/site-packages/pip/_vendor/distlib/w64-arm.exe
+Space Slimes PC/venv/Lib/site-packages/pip/_vendor/distlib/w32.exe
+Space Slimes PC/venv/Lib/site-packages/pip/_vendor/distlib/t64.exe
+Space Slimes PC/venv/Lib/site-packages/pip/_vendor/distlib/t64-arm.exe
+Space Slimes PC/venv/Lib/site-packages/pip/_vendor/distlib/t32.exe
+Space Slimes PC/venv/Lib/site-packages/pip/_vendor/certifi/cacert.pem
+Space Slimes PC/venv/Lib/site-packages/pip-23.0.1.dist-info/WHEEL
+Space Slimes PC/venv/Lib/site-packages/pip-23.0.1.dist-info/REQUESTED
+Space Slimes PC/venv/Lib/site-packages/pip-23.0.1.dist-info/RECORD
+Space Slimes PC/venv/Lib/site-packages/pip-23.0.1.dist-info/METADATA
+Space Slimes PC/venv/Lib/site-packages/pip-23.0.1.dist-info/INSTALLER
+Space Slimes PC/venv/Lib/site-packages/distutils-precedence.pth
+Space Slimes PC/Space Slimes AI.sln
+Space Slimes PC/Build/Windows/x86/Space Slimes_Data/UnityCrashHandler32.exe
+Space Slimes PC/Build/Windows/x86/Space Slimes_Data/Space Slimes_Data/Resources/unity_builtin_extra
+Space Slimes PC/Build/Windows/x86/Space Slimes_Data/Space Slimes_Data/Resources/unity default resources
+Space Slimes PC/Build/Windows/x86/Space Slimes_Data/Space Slimes_Data/level0
+Space Slimes PC/Build/Windows/x86/Space Slimes_Data/Space Slimes_Data/globalgamemanagers
+Space Slimes PC/Build/Windows/x86/Space Slimes_Data/MonoBleedingEdge/etc/mono/config
+Space Slimes PC/Assets/Sprites/Materials/Game_Background.mat
+Space Slimes PC/Assets/Sprites/Materials/Background 2.mat
+Space Slimes PC/Assets/Sprites/Materials/2205_w026_n002_1983b_p1_1983.mat
+*.anim
+Space Slimes Mobile/Build/Windows/x86/Space Slimes_Data/MonoBleedingEdge/etc/mono/config
+Space Slimes Mobile/Build/Windows/x86/Space Slimes_Data/Space Slimes_Data/globalgamemanagers
+Space Slimes Mobile/Build/Windows/x86/Space Slimes_Data/Space Slimes_Data/level0
+Space Slimes Mobile/Build/Windows/x86/Space Slimes_Data/Space Slimes_Data/Resources/unity default resources
+Space Slimes Mobile/Build/Windows/x86/Space Slimes_Data/Space Slimes_Data/Resources/unity_builtin_extra
+Space Slimes Mobile/Build/Windows/x86/Space Slimes_Data/UnityCrashHandler32.exe
