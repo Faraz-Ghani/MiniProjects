@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    int ammo=3;
+    float shootStart = -2f;
+    float CooldownTime = 2f;
+    bool ammo=true;
     public GameObject Player;
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public GameObject Reloading;
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && ammo>0 && Time.timeScale>0)
+        if (Input.GetButtonDown("Fire1") && Time.timeScale>0)
         {
             Shoot();
         }
@@ -19,15 +22,21 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-         ammo--;
-         Instantiate(bulletPrefab,firePoint.position,firePoint.rotation);
+        if (!(shootStart + CooldownTime < Time.time)) return;
+
+
+        if (Time.timeScale > 0)
+        {
+            shootStart = Time.time;
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Instantiate(Reloading, transform.position + new Vector3(0, 1.5f, 0), transform.rotation);
+
+            print(transform.position + new Vector3(0, 10, 0));
+
+        }
     }
 
-    public void Pickup()
-    {
-        ammo++;
-    }
-    
+   
 
 
 }
