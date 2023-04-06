@@ -5,6 +5,8 @@ using UnityEngine;
 public class reloading : MonoBehaviour
 {
     GameObject player;
+
+    public AudioSource Reload;
     public void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player");   
@@ -17,8 +19,10 @@ public class reloading : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Reload.PlayDelayed(0.2f);
+        
         Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
-
+        print("Deaht");
     }
 
     // Update is called once per frame

@@ -16,12 +16,16 @@ public class Player : MonoBehaviour
     [SerializeField]
     bool isGrounded = false;
     public Weapon weapon;
+    public AudioSource Dead;
+    public AudioSource Start;
+    public AudioSource Music;
 
     Rigidbody2D rb;
 
     public Text Scoretxt;
     private void Awake()
     {
+        Start.Play();
         anim = GetComponent<Animator>();   
         rb = GetComponent<Rigidbody2D>();
         score = 0;
@@ -30,6 +34,8 @@ public class Player : MonoBehaviour
 
     public void startgame()
     {
+        Start.Pause();
+        Music.Play();
         Time.timeScale = 1;
         StartScreen.gameObject.SetActive(false);
         button1.gameObject.SetActive(true);
@@ -87,6 +93,8 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Spike"))
         {
+            Music.Pause();
+            Dead.Play();
             isAlive = false;
             gameOverScript.Setup((int)score);
             Scoretxt.gameObject.SetActive(false);

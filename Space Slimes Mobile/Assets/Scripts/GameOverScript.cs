@@ -9,7 +9,7 @@ public class GameOverScript : MonoBehaviour {
   public void Setup(int score)
     {
         gameObject.SetActive(true);
-        PointsText.text= "Points :"+score.ToString();
+        PointsText.text= "POINTS :"+score.ToString();
 
     }
 
