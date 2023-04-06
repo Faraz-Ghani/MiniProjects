@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class reloading : MonoBehaviour
 {
-
     GameObject player;
     public void Update()
     {
@@ -13,7 +12,6 @@ public class reloading : MonoBehaviour
     }
     public void MoveGameObject()
     {
-        print("moving");
         transform.position = player.transform.position+ new Vector3(0, 1.5f, 0);
     }
     // Start is called before the first frame update

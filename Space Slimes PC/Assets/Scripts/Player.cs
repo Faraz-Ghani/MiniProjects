@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public GameOverScript gameOverScript;
     public GameObject Button,StartText;
     private Animator anim;
-
+    
     public float jumpforce;
     float score;
     bool isAlive = true;
@@ -16,12 +16,15 @@ public class Player : MonoBehaviour
     [SerializeField]
     bool isGrounded = false;
     public Weapon weapon;
+    public AudioSource Music;
+    public AudioSource Pause;
+    public AudioSource Dead;
 
     Rigidbody2D rb;
 
     public Text Scoretxt;
     private void Awake()
-    {
+    {   Pause.Play(); 
         anim = GetComponent<Animator>();   
         rb = GetComponent<Rigidbody2D>();
         score = 0;
@@ -30,10 +33,12 @@ public class Player : MonoBehaviour
 
     public void startgame()
     {
+        Pause.Pause();
         Time.timeScale = 1;
         StartText.gameObject.SetActive(false);
         Button.gameObject.SetActive(false);
         Scoretxt.gameObject.SetActive(true);
+        Music.Play();
     }
     
     private void Start()
@@ -77,7 +82,9 @@ public class Player : MonoBehaviour
             }
         }
         if (collision.gameObject.CompareTag("Spike"))
-        {
+        {   
+            Music.Pause();
+            Dead.Play();
             isAlive = false;
             gameOverScript.Setup((int)score);
             Scoretxt.gameObject.SetActive(false);

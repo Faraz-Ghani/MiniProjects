@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public GameObject Reloading;
+    public AudioSource Shootfx;
     // Update is called once per frame
     void Update()
     {
@@ -27,6 +28,7 @@ public class Weapon : MonoBehaviour
 
         if (Time.timeScale > 0)
         {
+            Shootfx.Play();
             shootStart = Time.time;
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Instantiate(Reloading, transform.position + new Vector3(0, 1.5f, 0), transform.rotation);
