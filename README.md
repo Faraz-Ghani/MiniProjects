@@ -1,6 +1,6 @@
-# MINI PROJECTS
-
 ![App ScreenShot](https://github.com/Faraz-Ghani/MiniProjects/blob/main/Space%20Slimes%20Mobile/Screenshots/img%202.png)
+
+# MINI PROJECTS
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/Faraz-Ghani/MiniProjects.svg)](https://github.com/Faraz-Ghani/MiniProjects) 
 [![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/y/Faraz-Ghani/MiniProjects.svg)](https://github.com/Faraz-Ghani/MiniProjects) 
