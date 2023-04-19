@@ -12,7 +12,14 @@ UserSettings
 .vsconfig
 .vs
 *.meta
+Prototype 2/*
+LearnProject/*
+CarGame/*
+
 Endless/Build/Windows/Installer/Space Slime setup script.iss
+*.mat
+*.prefab
+*.sln
 *.py
 *.pyc
 *.dll
