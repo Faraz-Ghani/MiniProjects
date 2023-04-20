@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GunController : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+{   
+     void Start()
     {
-        
+        // Get the parent sprite renderer
+        SpriteRenderer parentRenderer = transform.parent.GetComponent<SpriteRenderer>();
+
+        // If the parent has a sprite renderer
+        if (parentRenderer != null)
+        {
+            // Set the child's sorting order to be one more than the parent's sorting order
+            GetComponent<SpriteRenderer>().sortingOrder = parentRenderer.sortingOrder + 1;
+        }
     }
 
     // Update is called once per frame
@@ -18,6 +25,6 @@ public class GunController : MonoBehaviour
         Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePos);
         lookPos.z = transform.position.z;
         transform.up = lookPos - transform.position;
-   
+        Debug.Log(lookPos.y);
     }
 }
