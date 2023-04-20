@@ -18,11 +18,14 @@ public class EnemyController : MonoBehaviour
           transform.Translate(Vector2.down * speed * Time.deltaTime);
    }
 
-    void OnTriggerEnter2D(Collider2D other){
-        if(other.tag == "Ground"){
-            Destroy(gameObject);
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Player"){
+            Debug.Log("Game Over");
         }
-        if(other.tag == "Bullet"){
+        else if(other.tag =="Ground"){
+            Destroy(gameObject);    
+        }
+        else if(other.tag == "Bullet"){
             Destroy(gameObject);
         }
     }
