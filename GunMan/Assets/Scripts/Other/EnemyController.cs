@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyGenerator = FindObjectOfType<EnemyGenerator>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour
             Debug.Log("Game Over");
         }
         else if(other.tag =="Ground"){
-                enemyGenerator.Generate();
+            enemyGenerator.Generate();
             Destroy(gameObject);    
         }
         else if(other.tag == "Bullet"){
