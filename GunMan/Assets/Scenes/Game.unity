@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf1a64259c03e646825114883196d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fruit: {fileID: 100000, guid: 461f0170c82b53340a9812199b63bbd4, type: 3}
+  Fruit: {fileID: 2239863836182566383, guid: dd1dff162cc19274297482f0bdbc83ca, type: 3}
   Enemy: {fileID: 4441708015580516910, guid: 76a337475557a5c429c9323a2cb0133e, type: 3}
   mindelay: 0
   maxdelay: 2
