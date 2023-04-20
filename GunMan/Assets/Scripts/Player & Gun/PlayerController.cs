@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public ParticleSystem Particle;
     public float minrecoil;
     public float maxrecoil;
     
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
             float distance = Vector2.Distance(rb.position, Camera.main.transform.position);
             float forceMagnitude = Mathf.Lerp(maxrecoil, minrecoil, distance / Camera.main.orthographicSize);
             rb.AddForce(direction.normalized *forceMagnitude, ForceMode2D.Impulse);
-            Debug.Log("Mouse Position: " + clickPos.y);
+            Particle.Play(); 
         }
     }
 }

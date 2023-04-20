@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GunController : MonoBehaviour
-{   
+{
      void Start()
     {
         // Get the parent sprite renderer
@@ -20,11 +20,16 @@ public class GunController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //relocate gun
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Camera.main.transform.position.z - transform.position.z;
         Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePos);
         lookPos.z = transform.position.z;
         transform.up = lookPos - transform.position;
-        Debug.Log(lookPos.y);
+
+    }
+
+    public void Shoot(){
+        Debug.Log("Gun Shooting");
     }
 }
