@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float speed;
+    public EnemyGenerator enemyGenerator;
     
     // Start is called before the first frame update
     void Start()
@@ -23,9 +24,11 @@ public class EnemyController : MonoBehaviour
             Debug.Log("Game Over");
         }
         else if(other.tag =="Ground"){
+                enemyGenerator.Generate();
             Destroy(gameObject);    
         }
         else if(other.tag == "Bullet"){
+            Debug.Log("Hit");
             Destroy(gameObject);
         }
     }
