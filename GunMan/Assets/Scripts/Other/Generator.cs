@@ -34,7 +34,6 @@ public class Generator : MonoBehaviour
         else{
             Invoke("GenerateEnemy",delay);
         }
-        Invoke("GenerateEnemy",delay);
     }    
 
     public void GenerateEnemy(){
