@@ -207,6 +207,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1760188629 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2132079197306665463, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
+  m_PrefabInstance: {fileID: 2944371168719818132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1893698400
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +287,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 246273724818671874, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2603261935737164035, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -325,6 +334,26 @@ PrefabInstance:
     - target: {fileID: 2603261935737164035, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944371169094687786, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489339980866701112, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
+      propertyPath: Transition
+      value: 
+      objectReference: {fileID: 1760188629}
+    - target: {fileID: 7942071849090671950, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942071849090671950, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942071849090671950, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9058975773409040911, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
       propertyPath: m_Name

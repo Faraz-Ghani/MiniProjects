@@ -16276,6 +16276,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1754504843 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2944371169094687787, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
+  m_PrefabInstance: {fileID: 1774701157}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1774701157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16283,6 +16288,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 246273724818671874, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2603261935737164035, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -16327,6 +16336,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2944371169094687831, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489339980866701112, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
+      propertyPath: Transition
+      value: 
+      objectReference: {fileID: 1754504843}
     - target: {fileID: 9058975773409040911, guid: fe6bbe6d54f2e084dba648a88da1bcf6, type: 3}
       propertyPath: m_Name
       value: LevelLoader
