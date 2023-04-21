@@ -6,10 +6,13 @@ public class FruitController : MonoBehaviour
 {
     public float speed;
     public Generator generator;
+    
     public float x=0;
+    public ScoreScript score;
     // Start is called before the first frame update
     void Start()
     {
+        score = FindObjectOfType<ScoreScript>();
         generator = FindObjectOfType<Generator>();
     }
 
@@ -31,7 +34,8 @@ public class FruitController : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player"){
-            Debug.Log("Score ++");
+            score.scoreValue+=5;
+            generator.Generate();
             Destroy(gameObject);
         }
     }
