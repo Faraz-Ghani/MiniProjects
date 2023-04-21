@@ -9,6 +9,8 @@ public class FruitController : MonoBehaviour
     
     public float x=0;
     public ScoreScript score;
+
+    public GameObject points;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +37,15 @@ public class FruitController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player"){
             score.scoreValue+=5;
+            if(points){
+                ShowFloatingText();
+            }
             generator.Generate();
             Destroy(gameObject);
         }
+    }
+    void ShowFloatingText(){   
+        var go = Instantiate(points,transform.position,Quaternion.identity);
+        go.GetComponent<TextMesh>().text = "+5";
     }
 }
