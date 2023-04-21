@@ -28,8 +28,9 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);    
         }
         else if(other.tag == "Bullet"){
-            Debug.Log("Hit");
+            generator.Generate();
             Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

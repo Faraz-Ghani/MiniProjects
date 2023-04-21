@@ -395,7 +395,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2010
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8ac2b8153cf7b340a119d838d5219d2, type: 2}
   m_sharedMaterial: {fileID: -1923928227459002449, guid: d8ac2b8153cf7b340a119d838d5219d2, type: 2}
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 218.3
+  m_fontSize: 229.63
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -486,6 +486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 230831721}
   scoreValue: 0
+  anim: {fileID: 230831724}
 --- !u!95 &230831724
 Animator:
   serializedVersion: 5

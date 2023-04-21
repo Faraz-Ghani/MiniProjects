@@ -8,6 +8,7 @@ public class ScoreScript : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI score;
     public float scoreValue = 0;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,11 @@ public class ScoreScript : MonoBehaviour
     {
         scoreValue+=Time.deltaTime*0.75f;
         score.text =  ((int)scoreValue).ToString();
+    }
+
+    public void updateval(int val){
+        anim.SetTrigger("Pop");
+        scoreValue+=val;
     }
 
 }

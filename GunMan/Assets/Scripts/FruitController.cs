@@ -5,12 +5,11 @@ using UnityEngine;
 public class FruitController : MonoBehaviour
 {
     public float speed;
-    public Generator generator;
-    
+    public Generator generator; 
     public float x=0;
     public ScoreScript score;
-
-    public GameObject points;
+    public GameObject[] points;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -36,16 +35,27 @@ public class FruitController : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player"){
-            score.scoreValue+=5;
-            if(points){
-                ShowFloatingText();
-            }
+            addfive();
             generator.Generate();
             Destroy(gameObject);
         }
+        else if(other.tag == "Bullet"){
+            subtractfive();
+            generator.Generate();
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
     }
-    void ShowFloatingText(){   
-        var go = Instantiate(points,transform.position,Quaternion.identity);
-        go.GetComponent<TextMesh>().text = "+5";
+    void subtractfive(){
+        score.updateval(-5);
+        ShowFloatingText(1);
+    }
+    void addfive(){
+        score.updateval(5);
+        ShowFloatingText(0);
+    }
+    void ShowFloatingText(int val){   
+        var go = Instantiate(points[val],transform.position,Quaternion.identity);
+        // go.GetComponent<TextMesh>().text = val.ToString();
     }
 }

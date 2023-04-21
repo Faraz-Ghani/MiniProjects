@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem Particle;
     public float minrecoil;
     public float maxrecoil;
+    public GameObject bullet;
+    public Transform muzzle;
     
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour
             float forceMagnitude = Mathf.Lerp(maxrecoil, minrecoil, distance / Camera.main.orthographicSize);
             rb.AddForce(direction.normalized *forceMagnitude, ForceMode2D.Impulse);
             Particle.Play();
-            Gun.Shoot();
+            Instantiate(bullet,muzzle.transform.position,Quaternion.identity);
     }
 
 }
