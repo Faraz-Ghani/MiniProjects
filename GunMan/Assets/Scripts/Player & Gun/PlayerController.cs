@@ -35,4 +35,5 @@ public class PlayerController : MonoBehaviour
             Particle.Play();
             Gun.Shoot();
     }
+
 }
