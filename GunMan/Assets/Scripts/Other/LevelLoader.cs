@@ -5,23 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
- 
     public Animator Transition;
+    public int NextLevelIndex ;
+    public Animator ButtonAnimator;
 
     public float transtiontime=1f;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)){
-            LoadNextLevel();
-        }       
+        
     }
     public void LoadNextLevel(){
-        StartCoroutine (LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        StartCoroutine (LoadLevel(NextLevelIndex));
     }
     
     IEnumerator LoadLevel(int LevelIndex){
+        ButtonAnimator.SetTrigger("StartGame"); 
         //Play animation
         Transition.SetTrigger("Start");
         //wait
