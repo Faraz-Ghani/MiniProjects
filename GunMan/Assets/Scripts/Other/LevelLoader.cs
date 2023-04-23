@@ -7,8 +7,7 @@ public class LevelLoader : MonoBehaviour
 {
     public Animator Transition;
     public int NextLevelIndex ;
-    public Animator ButtonAnimator;
-
+    public Animator MenuAnim;
     public float transtiontime=1f;
 
     // Update is called once per frame
@@ -16,12 +15,21 @@ public class LevelLoader : MonoBehaviour
     {
         
     }
+
+    public void Setings_Main(){
+        MenuAnim.SetTrigger("Main_Settings");
+    }
+
+    public void About_Main(){
+        MenuAnim.SetTrigger("Main_About");
+    }
+
     public void LoadNextLevel(){
         StartCoroutine (LoadLevel(NextLevelIndex));
     }
     
     IEnumerator LoadLevel(int LevelIndex){
-        ButtonAnimator.SetTrigger("StartGame"); 
+        MenuAnim.SetTrigger("StartGame"); 
         //Play animation
         Transition.SetTrigger("Start");
         //wait
