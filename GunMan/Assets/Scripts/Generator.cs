@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
+
+    public bool isGameOver = false;
     public GameObject Fruit;
     public GameObject Enemy;
     public float mindelay=0;
@@ -25,7 +27,7 @@ public class Generator : MonoBehaviour
     }
 
     public void Generate(){
-        Debug.Log("Generate");
+        if(!isGameOver){Debug.Log("Generate");
         float delay = Random.Range(mindelay,maxdelay);
         int rand = Random.Range(0,2);
         if(rand==0){
@@ -33,7 +35,7 @@ public class Generator : MonoBehaviour
         }
         else{
             Invoke("GenerateEnemy",delay);
-        }
+        }}
     }    
 
     public void GenerateEnemy(){

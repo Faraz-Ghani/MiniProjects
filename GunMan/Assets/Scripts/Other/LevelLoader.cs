@@ -25,11 +25,19 @@ public class LevelLoader : MonoBehaviour
     }
 
     public void LoadNextLevel(){
+        MenuAnim.SetTrigger("StartGame"); 
         StartCoroutine (LoadLevel(NextLevelIndex));
+    }
+
+    public void loadMenu(){
+        StartCoroutine (LoadLevel(0));
+    }
+
+    public void loadgame(){
+        StartCoroutine (LoadLevel(1));
     }
     
     IEnumerator LoadLevel(int LevelIndex){
-        MenuAnim.SetTrigger("StartGame"); 
         //Play animation
         Transition.SetTrigger("Start");
         //wait

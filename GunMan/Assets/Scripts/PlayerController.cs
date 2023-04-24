@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool alive = true;
+    public BoxCollider2D collider;
+    public Generator generator;
     public GunController Gun;
     public ParticleSystem Particle;
     public float minrecoil;
     public float maxrecoil;
     public GameObject bullet;
     public Transform muzzle;
+    public Animator GameOver;
+    public ScoreScript score;
     
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
+        score = FindObjectOfType<ScoreScript>();
+        generator=FindObjectOfType<Generator>();
+        collider=GetComponent<BoxCollider2D>();
         Gun = FindObjectOfType<GunController>();
         rb=GetComponent<Rigidbody2D>();
     }
@@ -22,7 +30,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)){
+        if(Input.GetMouseButtonDown(0) && alive){
             Shoot();
         }
         
@@ -36,6 +44,17 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(direction.normalized *forceMagnitude, ForceMode2D.Impulse);
             Particle.Play();
             Instantiate(bullet,muzzle.transform.position,Quaternion.identity);
+    }
+
+    public void die(){
+        GameOver.SetTrigger("Game Over");
+        rb.velocity = Vector2.zero;
+        rb.AddForce(Vector2.up*5, ForceMode2D.Impulse);
+        rb.gravityScale=1;
+        alive=false;
+        collider.isTrigger = true;
+        generator.isGameOver = true;
+        score.isGameOver = true;
     }
 
 }
