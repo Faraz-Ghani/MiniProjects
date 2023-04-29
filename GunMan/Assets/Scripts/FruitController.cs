@@ -5,7 +5,7 @@ using UnityEngine;
 public class FruitController : MonoBehaviour
 {
     public float speed;
-    public Generator generator; 
+    public FruitGenerator generator; 
     public float x=0;
     public ScoreScript score;
     public GameObject[] points;
@@ -14,7 +14,7 @@ public class FruitController : MonoBehaviour
     void Start()
     {
         score = FindObjectOfType<ScoreScript>();
-        generator = FindObjectOfType<Generator>();
+        generator = FindObjectOfType<FruitGenerator>();
     }
 
     // Update is called once per frame
@@ -40,16 +40,12 @@ public class FruitController : MonoBehaviour
             Destroy(gameObject);
         }
         else if(other.tag == "Bullet"){
-            subtractfive();
             generator.Generate();
             Destroy(gameObject);
             Destroy(other.gameObject);
         }
     }
-    void subtractfive(){
-        score.updateval(-5);
-        ShowFloatingText(1);
-    }
+
     void addfive(){
         score.updateval(5);
         ShowFloatingText(0);

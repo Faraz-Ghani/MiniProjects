@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Generator : MonoBehaviour
+public class EnemyGenerator : MonoBehaviour
 {
 
     public bool isGameOver = false;
-    public GameObject Fruit;
     public GameObject Enemy;
     public float mindelay=0;
     public float maxdelay=2;
@@ -30,23 +29,14 @@ public class Generator : MonoBehaviour
         if(!isGameOver){Debug.Log("Generate");
         float delay = Random.Range(mindelay,maxdelay);
         int rand = Random.Range(0,2);
-        if(rand==0){
-            Invoke("GenerateFruit",delay);
+        Invoke("GenerateEnemy",delay);
+      
         }
-        else{
-            Invoke("GenerateEnemy",delay);
-        }}
     }    
 
     public void GenerateEnemy(){
         int x = Random.Range(-x_thresold,x_thresold);
         Vector3 pos = new Vector3(x,transform.position.y,transform.position.z);
         Instantiate(Enemy,pos,Quaternion.identity);
-    }
-
-    public void GenerateFruit(){
-        int x = Random.Range(-x_thresold,x_thresold);
-        Vector3 pos = new Vector3(x,transform.position.y,transform.position.z);
-        Instantiate(Fruit,pos,Quaternion.identity);
     }
 }

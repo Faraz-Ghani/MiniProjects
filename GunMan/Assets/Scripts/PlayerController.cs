@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public bool alive = true;
-    public BoxCollider2D collider;
-    public Generator generator;
+    public BoxCollider2D colliderBox;
+    public FruitGenerator Fgenerator;
+    public EnemyGenerator Egenerator;
     public GunController Gun;
     public ParticleSystem Particle;
     public float minrecoil;
@@ -21,8 +22,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         score = FindObjectOfType<ScoreScript>();
-        generator=FindObjectOfType<Generator>();
-        collider=GetComponent<BoxCollider2D>();
+        Egenerator=FindObjectOfType<EnemyGenerator>();
+        Fgenerator=FindObjectOfType<FruitGenerator>();
+        colliderBox=GetComponent<BoxCollider2D>();
         Gun = FindObjectOfType<GunController>();
         rb=GetComponent<Rigidbody2D>();
     }
@@ -52,8 +54,9 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector2.up*5, ForceMode2D.Impulse);
         rb.gravityScale=1;
         alive=false;
-        collider.isTrigger = true;
-        generator.isGameOver = true;
+        colliderBox.isTrigger = true;
+        Egenerator.isGameOver = true;
+        Fgenerator.isGameOver = true;
         score.isGameOver = true;
     }
 

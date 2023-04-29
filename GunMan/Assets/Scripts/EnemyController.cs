@@ -6,13 +6,13 @@ public class EnemyController : MonoBehaviour
 {
     public PlayerController player;
     public float speed;
-    public Generator generator;
+    public EnemyGenerator generator;
     
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        generator = FindObjectOfType<Generator>();
+        generator = FindObjectOfType<EnemyGenerator>();
     }
 
     // Update is called once per frame
