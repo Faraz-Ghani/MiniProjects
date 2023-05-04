@@ -51,7 +51,7 @@ private void FixedUpdate() {
     }
 
     
-
+    transform.eulerAngles = new Vector3(0,0,GetAngleFromVecot(_direction));
     this.transform.position = new Vector3(
         Mathf.Round(this.transform.position.x) + _direction.x,
         Mathf.Round(this.transform.position.y) + _direction.y,
@@ -67,9 +67,23 @@ private void OnTriggerEnter2D(Collider2D other) {
         Grow();
     }
     if(other.gameObject.tag == "Segment"){
-        Time.timeScale = 0;
-        Debug.Log("Game Over");
+       GameOver();
+       }
+    
+    if(other.gameObject.tag == "Wall"){
+      GameOver();
     }
+}
+
+public void GameOver(){
+ _direction = Vector2.zero;
+ 
+}
+
+public float GetAngleFromVecot(Vector2 Dir){
+    float n = Mathf.Atan2(Dir.y,Dir.x) * Mathf.Rad2Deg;
+    if(n<0) n+=360;
+    return n;
 }
 
 public void Grow(){
