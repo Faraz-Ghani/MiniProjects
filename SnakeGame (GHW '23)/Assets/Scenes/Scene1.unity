@@ -288,6 +288,7 @@ MonoBehaviour:
   timerMax: 1
   _direction: {x: 1, y: 0}
   generator: {fileID: 0}
+  alive: 0
 --- !u!212 &229399801
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -794,7 +795,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 229399800}
         m_TargetAssemblyTypeName: Snake_Movement, Assembly-CSharp
-        m_MethodName: play
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

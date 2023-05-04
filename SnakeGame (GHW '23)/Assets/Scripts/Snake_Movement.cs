@@ -13,7 +13,7 @@ public class Snake_Movement : MonoBehaviour
     public float timerMax = 1;
     public Vector2 _direction = Vector2.zero;
     public Generator generator;
-    
+    public bool alive= false;
     // Start is called before the first frame update
     private void Awake() {
 
@@ -23,7 +23,6 @@ public class Snake_Movement : MonoBehaviour
       generator = GameObject.FindWithTag("MainCamera").GetComponent<Generator>();
       _segments = new List<Transform>();
       _segments.Add(this.transform);   
-      Grow();
       animator = Canvas.GetComponent<Animator>();
       
     }
@@ -49,6 +48,9 @@ public class Snake_Movement : MonoBehaviour
         {
             _direction = Vector2.right;
         } 
+        if(!alive){
+            transform.position = new Vector3(0,0,0);
+        }
  
     
    
@@ -105,23 +107,13 @@ public void play(){
     animator.SetTrigger("Play");
     generator.Gen();
     _direction = Vector2.right;
-    Debug.Log("play");
+    alive = true;
+    Grow();
+    
 }
 
-public void Quit(){
-    Application.Quit();
-}
 
 public void Restart(){
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    // transform.position = new Vector3(0,0,0);
-    // Destroy(GameObject.FindWithTag("Segment"));
-    // animator.SetTrigger("Play");
-    // score=0;
-    // _segments = new List<Transform>();
-    // _segments.Add(this.transform);   
-    //  Grow();
-    //  generator.Gen();
-    //  _direction = Vector2.right;
-}
+    }
 }
