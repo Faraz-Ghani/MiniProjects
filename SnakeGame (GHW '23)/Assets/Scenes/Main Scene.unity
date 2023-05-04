@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 229399801}
   - component: {fileID: 229399800}
   - component: {fileID: 229399803}
+  - component: {fileID: 229399804}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -254,6 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0c0fff8c5b7ae47a4da3cb31d74824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  segmentPrefab: {fileID: 4309811729369633771, guid: 77c4a8562de37c649939cf1f950c6f43, type: 3}
   score: 0
   timer: 0
   timerMax: 1
@@ -351,6 +353,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &229399804
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229399799}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &232384353
 GameObject:
   m_ObjectHideFlags: 0
