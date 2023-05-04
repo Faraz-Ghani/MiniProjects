@@ -1,21 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Snake_Movement : MonoBehaviour
 {
+    public Animator animator;
+    public GameObject Canvas;
     private List<Transform> _segments;
     public Transform segmentPrefab; 
     public int score=1;
     public float timer = 0;
     public float timerMax = 1;
-    public Vector2 _direction = Vector2.right;
+    public Vector2 _direction = Vector2.zero;
+    public Generator generator;
+    
     // Start is called before the first frame update
+    private void Awake() {
+
+    }
     void Start()
     {
+      generator = GameObject.FindWithTag("MainCamera").GetComponent<Generator>();
       _segments = new List<Transform>();
       _segments.Add(this.transform);   
       Grow();
+      animator = Canvas.GetComponent<Animator>();
+      
     }
 
     // Update is called once per frame
@@ -66,18 +76,18 @@ private void OnTriggerEnter2D(Collider2D other) {
         score++;
         Grow();
     }
-    if(other.gameObject.tag == "Segment"){
+    if(other.gameObject.tag == "Segment" || other.gameObject.tag=="Wall"){
        GameOver();
        }
     
-    if(other.gameObject.tag == "Wall"){
-      GameOver();
-    }
+    
 }
 
 public void GameOver(){
  _direction = Vector2.zero;
- 
+animator.SetTrigger("GameOver");
+generator.Gen();
+Debug.Log("Game Over");
 }
 
 public float GetAngleFromVecot(Vector2 Dir){
@@ -90,5 +100,28 @@ public void Grow(){
     Transform segment = Instantiate(this.segmentPrefab);
     segment.position = _segments[_segments.Count-1].position;
     _segments.Add(segment);
+}
+public void play(){
+    animator.SetTrigger("Play");
+    generator.Gen();
+    _direction = Vector2.right;
+    Debug.Log("play");
+}
+
+public void Quit(){
+    Application.Quit();
+}
+
+public void Restart(){
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    // transform.position = new Vector3(0,0,0);
+    // Destroy(GameObject.FindWithTag("Segment"));
+    // animator.SetTrigger("Play");
+    // score=0;
+    // _segments = new List<Transform>();
+    // _segments.Add(this.transform);   
+    //  Grow();
+    //  generator.Gen();
+    //  _direction = Vector2.right;
 }
 }
