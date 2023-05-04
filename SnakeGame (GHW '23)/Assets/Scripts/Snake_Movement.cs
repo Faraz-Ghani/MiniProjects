@@ -6,7 +6,7 @@ public class Snake_Movement : MonoBehaviour
 {
     private List<Transform> _segments;
     public Transform segmentPrefab; 
-    public int score=0;
+    public int score=1;
     public float timer = 0;
     public float timerMax = 1;
     public Vector2 _direction = Vector2.right;
@@ -15,6 +15,7 @@ public class Snake_Movement : MonoBehaviour
     {
       _segments = new List<Transform>();
       _segments.Add(this.transform);   
+      Grow();
     }
 
     // Update is called once per frame
@@ -22,31 +23,35 @@ public class Snake_Movement : MonoBehaviour
     {
         
     //handle input
-    if(Input.GetKeyDown(KeyCode.UpArrow))
+    if(Input.GetKeyDown(KeyCode.UpArrow) && _direction != Vector2.down )
         {
             _direction = Vector2.up;
         }
-    else if(Input.GetKeyDown(KeyCode.DownArrow))
+    else if(Input.GetKeyDown(KeyCode.DownArrow) && _direction != Vector2.up)
         {
             _direction = Vector2.down;
         }
-    else if(Input.GetKeyDown(KeyCode.LeftArrow))
+    else if(Input.GetKeyDown(KeyCode.LeftArrow) && _direction != Vector2.right)
             {
             _direction = Vector2.left;
             }
-    else if(Input.GetKeyDown(KeyCode.RightArrow))
+    else if(Input.GetKeyDown(KeyCode.RightArrow) && _direction != Vector2.left)
         {
             _direction = Vector2.right;
         } 
  
     
-    //handle growth
-    for(int i= _segments.Count-1;i>0;i--){
-        _segments[i].position = _segments[i-1].position;
-    }
+   
 }
 
 private void FixedUpdate() {
+     //handle growth
+    for(int i= _segments.Count-1;i>0;i--){
+        _segments[i].position = _segments[i-1].position;
+    }
+
+    
+
     this.transform.position = new Vector3(
         Mathf.Round(this.transform.position.x) + _direction.x,
         Mathf.Round(this.transform.position.y) + _direction.y,
@@ -58,9 +63,12 @@ private void FixedUpdate() {
 private void OnTriggerEnter2D(Collider2D other) {
     if(other.gameObject.tag == "Food"){
         Destroy(other.gameObject);
-        Debug.Log("Food Eaten");
         score++;
         Grow();
+    }
+    if(other.gameObject.tag == "Segment"){
+        Time.timeScale = 0;
+        Debug.Log("Game Over");
     }
 }
 
