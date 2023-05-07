@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     {
         Animator.SetTrigger("Play");
         Bg_Scroll.setSpeed();   
-        playerController.play();
+       // playerController.play();
         PipeGenerator.generateTwo();
     }
 }

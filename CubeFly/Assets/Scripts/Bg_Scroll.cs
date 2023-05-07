@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bg_Scroll : MonoBehaviour
 {
-    public float speed =0f;
+    public float speed =4f;
     private Vector3 StartPos;
     // Start is called before the first frame update
     void Start()

@@ -9,23 +9,34 @@ public class Player_Controller : MonoBehaviour
     public bool isFalling ;
     public float jumpForce =10f;
     public Animator playerAnimator;
-    public bool alive = false;
     public Bg_Scroll bg;
+    public bool dead = false;
+    public Animator anim;
+    public bool play = false;
+    
+    void Awake()
+    {
+    }
+    
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody2D>();
-        playerRigidbody.gravityScale = 0;   
+        playerRigidbody.gravityScale = 1; 
+        anim = GameObject.Find("Canvas").GetComponent<Animator>(); 
+        Death();
+     
     }
 
     void Update()
     {
         checkInput();
         checkfall();
-        if (alive)
+        if (!dead)
         {
             checkAngle();
         }
+        
     }
 
     public void checkAngle()
@@ -45,11 +56,27 @@ public class Player_Controller : MonoBehaviour
     }
 
     public void checkInput(){
-        if (Input.GetKeyDown(KeyCode.Space) && alive)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerAnimator.SetTrigger("Jump");
-            playerRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            if (!play)
+            {
+                anim.SetTrigger("Play");
+                Alive();
+
+            }
+            if (!dead)
+            {
+
+                playerAnimator.SetTrigger("Jump");
+                playerRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+            if(play && dead)
+            {
+                PlayAgain();
+            }
         }
+
+
     }
 
     public void checkfall(){
@@ -63,24 +90,40 @@ public class Player_Controller : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        Death();
-    }
+   
 
-    public void play()
-    {
-        playerRigidbody.gravityScale = 1;
-        alive= true;
-    }
 
     public void Death(){
         bg.speed=0f;
-        alive=false;
-        
+        GameObject[] Pipes = GameObject.FindGameObjectsWithTag("Pipe");
+        foreach (GameObject obj in Pipes)
+        {
+            obj.GetComponent<PipeController>().speed = 0f;
+            Debug.Log("Pipe Stopped");
+        }
+        playerRigidbody.gravityScale = 0f;
+        playerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+        dead = true;
     }
+
+    public void Alive()
+    {
+        playerRigidbody.constraints = RigidbodyConstraints2D.FreezePositionX;
+        bg.speed = 4f;
+        GameObject[] Pipes = GameObject.FindGameObjectsWithTag("Pipe");
+        foreach (GameObject obj in Pipes)
+        {
+            obj.GetComponent<PipeController>().speed = 3f;
+        }
+        playerRigidbody.gravityScale = 1f;
+        dead = false;
+        play = true;
+    }
+    
     public void PlayAgain()
     {
         SceneManager.LoadScene(0);
     }
+
 }
 

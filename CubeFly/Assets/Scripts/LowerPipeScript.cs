@@ -18,16 +18,16 @@ public class LowerPipeScript : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-            
-        if (other.gameObject.tag == "Player")
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "Finish")
         {
-            
+        pipeGenerator.generate();
+        Destroy(gameObject);
         }
-        else if (other.gameObject.tag == "Finish")
+        else if (other.gameObject.tag == "Player")
         {
-            pipeGenerator.generate();
-            Destroy(gameObject);
+            other.gameObject.GetComponent<Player_Controller>().Death();
         }
     }
 }
+    

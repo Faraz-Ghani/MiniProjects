@@ -11,6 +11,13 @@ public class PipeGenerator : MonoBehaviour
     void Start()
     {
         GameObject.Find("PipeGenerator").GetComponent<PipeGenerator>();
+        generateTwo();
+        GameObject[] Pipes = GameObject.FindGameObjectsWithTag("Pipe");
+        foreach (GameObject obj in Pipes)
+        {
+            obj.GetComponent<PipeController>().speed = 0f;
+            Debug.Log("Pipe Stopped");
+        }
     }
 
     // Update is called once per frame
