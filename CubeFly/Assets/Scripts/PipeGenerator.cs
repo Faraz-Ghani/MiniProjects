@@ -10,7 +10,7 @@ public class PipeGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        generate();
+        GameObject.Find("PipeGenerator").GetComponent<PipeGenerator>();
     }
 
     // Update is called once per frame
@@ -21,6 +21,19 @@ public class PipeGenerator : MonoBehaviour
 
     public void generate(){
         float y = Random.Range(yMin, yMax);
-        GameObject pipe = Instantiate(pipePrefab, new Vector3(10, y, 0), Quaternion.identity);
+        Instantiate(pipePrefab, new Vector3(10, y, 0), Quaternion.identity);
+    }
+
+    public void generateTwo(){
+        //generate once
+        float y = Random.Range(yMin, yMax);
+        Instantiate(pipePrefab, new Vector3(10, y, 0), Quaternion.identity);
+    
+
+
+        //generate twice
+         y = Random.Range(yMin, yMax);
+        Instantiate(pipePrefab, new Vector3(30, y, 0), Quaternion.identity);
+    
     }
 }

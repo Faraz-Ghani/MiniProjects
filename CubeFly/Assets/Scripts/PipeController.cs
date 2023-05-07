@@ -29,4 +29,10 @@ public class PipeController : MonoBehaviour
         Destroy(gameObject);
         }
    }
+
+   public void OnCollisionEnter2D(Collision2D other) {
+      speed=0f;
+   }
+
+
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bg_Scroll : MonoBehaviour
 {
-    public float speed =4f;
+    public float speed =0f;
     private Vector3 StartPos;
     // Start is called before the first frame update
     void Start()
@@ -18,5 +18,9 @@ public class Bg_Scroll : MonoBehaviour
         transform.position=StartPos;    
     }
         transform.Translate(Vector3.left*speed*Time.deltaTime);
+    }
+
+    public void setSpeed(){
+        speed=4f;
     }
 }
