@@ -13,7 +13,6 @@ public class Player_Controller : MonoBehaviour
     public bool dead = false;
     public Animator anim;
     public bool play = false;
-    
     void Awake()
     {
     }

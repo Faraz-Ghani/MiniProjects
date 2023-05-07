@@ -25,5 +25,6 @@ public class FinishController : MonoBehaviour
         {
             pipeGenerator.generate();
         }
+        
     }
 }

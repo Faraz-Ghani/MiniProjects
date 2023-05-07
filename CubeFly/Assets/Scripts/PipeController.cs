@@ -21,17 +21,15 @@ public class PipeController : MonoBehaviour
         if(transform.position.x < -30f){
             Destroy(gameObject);
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-      if (other.gameObject.tag == "Player"){
-      anim.SetTrigger("Death");
-      other.gameObject.GetComponent<Player_Controller>().Death();
+         if (other.gameObject.tag == "Player"){
+             anim.SetTrigger("Death");
+            other.gameObject.GetComponent<Player_Controller>().Death();
+        }
       }
-
-   }
-
-   
 
 
 }
