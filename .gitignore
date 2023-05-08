@@ -5,7 +5,7 @@ Packages
 ProjectSettings
 Temp
 *.csproj
-Endless.sln
+
 UpgradeLog.htm
 Plugins
 UserSettings
@@ -81,7 +81,6 @@ Space Slimes AI/venv/Lib/site-packages/pip-23.0.1.dist-info/LICENSE.txt
 Space Slimes AI/venv/Lib/site-packages/pip-23.0.1.dist-info/INSTALLER
 Space Slimes AI/venv/Lib/site-packages/pip-23.0.1.dist-info/entry_points.txt
 Space Slimes AI/venv/Lib/site-packages/distutils-precedence.pth
-Space Slimes AI/Space Slimes AI.sln
 Endless/Build/Andriod/Space Slimes_BurstDebugInformation_DoNotShip/tempburstlibs/armeabi-v7a/lib_burst_generated.txt
 Endless/Build/New folder/SpaceSlimes_BurstDebugInformation_DoNotShip/tempburstlibs/armeabi-v7a/lib_burst_generated.txt
 Endless/venv/Lib/site-packages/distutils-precedence.pth
@@ -187,7 +186,6 @@ Space Slimes PC/venv/Lib/site-packages/pip-23.0.1.dist-info/RECORD
 Space Slimes PC/venv/Lib/site-packages/pip-23.0.1.dist-info/METADATA
 Space Slimes PC/venv/Lib/site-packages/pip-23.0.1.dist-info/INSTALLER
 Space Slimes PC/venv/Lib/site-packages/distutils-precedence.pth
-Space Slimes PC/Space Slimes AI.sln
 Space Slimes PC/Build/Windows/x86/Space Slimes_Data/UnityCrashHandler32.exe
 Space Slimes PC/Build/Windows/x86/Space Slimes_Data/Space Slimes_Data/Resources/unity_builtin_extra
 Space Slimes PC/Build/Windows/x86/Space Slimes_Data/Space Slimes_Data/Resources/unity default resources
