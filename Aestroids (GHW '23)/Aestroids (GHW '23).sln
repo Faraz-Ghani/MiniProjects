@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{b43cee88-25a7-e559-add0-8cd751c3033a}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meryel.CodeAssist.Editor", "Meryel.CodeAssist.Editor.csproj", "{b14f53b6-0368-6f58-b521-406fe4f07c75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{b43cee88-25a7-e559-add0-8cd751c3033a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b43cee88-25a7-e559-add0-8cd751c3033a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b14f53b6-0368-6f58-b521-406fe4f07c75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b14f53b6-0368-6f58-b521-406fe4f07c75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 10f;
     public Rigidbody2D rb;
     public bool canMove = true;
+    public GameObject bullet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,10 @@ public class PlayerController : MonoBehaviour
         Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         //rb.AddForce(movement * speed);
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
         if (movement != Vector2.zero) {
         float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -59,9 +65,12 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.right * Time.deltaTime * speed, ForceMode2D.Impulse);
         }
+    }
 
+    public void Shoot()
+    {
+        Instantiate(bullet, transform.position,new Quaternion(0,0,0,0));
         
-
     }
 
 }
