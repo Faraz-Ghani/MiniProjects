@@ -7,6 +7,6 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/Faraz-Ghani/MiniProjects.svg?style=flat)
 
 
-##This Repo Will contain all the mini projects that i create Throughout my learning process. It will mainly consist of Unity Projects based on C#
-![App ScreenShot](https://github.com/Faraz-Ghani/MiniProjects/blob/main/Space%20Slimes%20Mobile/Screenshots/img%202.png)
+## This Repo Will contain all the mini projects that i create Throughout my learning process. It will mainly consist of Unity Projects based on C#
+![App ScreenShot](https://github.com/Faraz-Ghani/Space-Slimes/blob/main/Space%20Slimes%20Mobile/Screenshots/img%202.png)
 
