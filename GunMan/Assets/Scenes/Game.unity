@@ -165,7 +165,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7727951}
+  m_Size: {x: 1, y: 2.5}
   m_EdgeRadius: 0
 --- !u!212 &25656929
 SpriteRenderer:
@@ -377,7 +377,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7727951}
+  m_Size: {x: 1, y: 2.5}
   m_EdgeRadius: 0
 --- !u!212 &83080013
 SpriteRenderer:
@@ -16881,7 +16881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGameOver: 0
-  Fruit: {fileID: 2239863836182566383, guid: dd1dff162cc19274297482f0bdbc83ca, type: 3}
+  Fruit: {fileID: 3909670969593699993, guid: 2cfa96c0c062b2645b184260edee1fc7, type: 3}
   mindelay: 1
   maxdelay: 5
 --- !u!212 &1350934551
@@ -17596,7 +17596,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2.5}
   m_EdgeRadius: 0
 --- !u!212 &1967125401
 SpriteRenderer:
